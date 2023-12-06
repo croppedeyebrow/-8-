@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import headlogo from "../images/headlogo.png";
+import headlogo from "../images/Symbol_white@300x.png";
 
 const NavContainer = styled.div`
   height: 8rem;
-  width: 110vw;
+  width: 100vw;
   display: flex;
   position: relative;
   left: 0px;
@@ -26,7 +26,7 @@ const Code8Head = styled.div`
 
 const TextBox01 = styled.div`
   font-size: 2rem;
-  // display: flex;
+  display: flex;
   position: relative;
   font-weight: bold;
   color: white;
@@ -126,7 +126,6 @@ const Header = () => {
     <NavContainer>
       <Code8Head>
         <TextBox01>공연</TextBox01>
-
         <Textbox02>STORE</Textbox02>
         <Textbox03>공지사항</Textbox03>
         <HeadLogo alt="헤더바로고" src={headlogo}></HeadLogo>
