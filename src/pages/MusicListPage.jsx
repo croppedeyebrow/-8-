@@ -7,6 +7,7 @@ import postimg03 from "../images/postimg03.jpg";
 import postimg04 from "../images/postimg04.jpg";
 import postimg05 from "../images/postimg05.jpg";
 import albumthuming from "../images/albumthumimg01.jpg";
+import Waveform from "../conponent/MusicList/MusicPlayer";
 
 const SingList = styled.div`
   width: 100vw;
@@ -30,10 +31,11 @@ const SingerPost = styled.div`
 
 const SingerPostImg = styled.img`
   width: 100vw;
-  height: 50rem;
+  height: 100%;
   display: flex;
   position: relative;
-  object-fit: cover;
+  object-fit: contain;
+  bottom: 20rem;
 `;
 
 const SearchBarBox = styled.div`
@@ -62,7 +64,7 @@ const SearchBar = styled.div`
 `;
 
 const ListNavbar = styled.div`
-  width: 94vw;
+  width: 100vw;
   height: 6rem;
   display: flex;
   position: relative;
@@ -88,14 +90,30 @@ const MusicCategory01 = styled.div`
   font-size: 1.8rem;
   align-items: center;
   justify-content: center;
+  overflow: hidden; /* 텍스트 밑으로 확장되지 않도록 오버플로우 제어 */
 
   /* 호버 효과 스타일 */
   &:hover {
     color: white; /* 호버 시 텍스트 색상 변경 */
-    transform: scale(1.15); /* 텍스트 확대 */
     cursor: pointer; /* 호버 시 마우스 커서 변경 */
-    font-size: 18px; /* 글자 크기 조절 */
-    text-decoration: underline;
+    text-decoration: none; /* 밑줄 제거 */
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0%; /* 초기에는 화면의 절반만큼의 너비를 가짐 */
+    height: 2px; /* 밑줄 높이 */
+    bottom: 0;
+    background-color: #61e6ca; /* 밑줄 색상 */
+    transition: width 0.3s ease; /* 변화 시 애니메이션 */
+  }
+
+  &:hover:before,
+  &:hover:after {
+    width: 100%; /* 호버 시 전체 너비로 확장 */
+    transition: width 0.3s ease; /* 변화 시 애니메이션 */
   }
 `;
 
@@ -110,14 +128,30 @@ const MusicCategory02 = styled.div`
   font-size: 1.8rem;
   align-items: center;
   justify-content: center;
+  overflow: hidden; /* 텍스트 밑으로 확장되지 않도록 오버플로우 제어 */
 
   /* 호버 효과 스타일 */
   &:hover {
     color: white; /* 호버 시 텍스트 색상 변경 */
-    transform: scale(1.15); /* 텍스트 확대 */
     cursor: pointer; /* 호버 시 마우스 커서 변경 */
-    font-size: 18px; /* 글자 크기 조절 */
-    text-decoration: underline;
+    text-decoration: none; /* 밑줄 제거 */
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0%; /* 초기에는 화면의 절반만큼의 너비를 가짐 */
+    height: 2px; /* 밑줄 높이 */
+    bottom: 0;
+    background-color: #61e6ca; /* 밑줄 색상 */
+    transition: width 0.3s ease; /* 변화 시 애니메이션 */
+  }
+
+  &:hover:before,
+  &:hover:after {
+    width: 100%; /* 호버 시 전체 너비로 확장 */
+    transition: width 0.3s ease; /* 변화 시 애니메이션 */
   }
 `;
 
@@ -132,14 +166,30 @@ const MusicCategory03 = styled.div`
   font-size: 1.8rem;
   align-items: center;
   justify-content: center;
+  overflow: hidden; /* 텍스트 밑으로 확장되지 않도록 오버플로우 제어 */
 
   /* 호버 효과 스타일 */
   &:hover {
     color: white; /* 호버 시 텍스트 색상 변경 */
-    transform: scale(1.15); /* 텍스트 확대 */
     cursor: pointer; /* 호버 시 마우스 커서 변경 */
-    font-size: 18px; /* 글자 크기 조절 */
-    text-decoration: underline;
+    text-decoration: none; /* 밑줄 제거 */
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0%; /* 초기에는 화면의 절반만큼의 너비를 가짐 */
+    height: 2px; /* 밑줄 높이 */
+    bottom: 0;
+    background-color: #61e6ca; /* 밑줄 색상 */
+    transition: width 0.3s ease; /* 변화 시 애니메이션 */
+  }
+
+  &:hover:before,
+  &:hover:after {
+    width: 100%; /* 호버 시 전체 너비로 확장 */
+    transition: width 0.3s ease; /* 변화 시 애니메이션 */
   }
 `;
 
@@ -154,14 +204,30 @@ const MusicCategory04 = styled.div`
   font-size: 1.8rem;
   align-items: center;
   justify-content: center;
+  overflow: hidden; /* 텍스트 밑으로 확장되지 않도록 오버플로우 제어 */
 
   /* 호버 효과 스타일 */
   &:hover {
     color: white; /* 호버 시 텍스트 색상 변경 */
-    transform: scale(1.15); /* 텍스트 확대 */
     cursor: pointer; /* 호버 시 마우스 커서 변경 */
-    font-size: 18px; /* 글자 크기 조절 */
-    text-decoration: underline;
+    text-decoration: none; /* 밑줄 제거 */
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0%; /* 초기에는 화면의 절반만큼의 너비를 가짐 */
+    height: 2px; /* 밑줄 높이 */
+    bottom: 0;
+    background-color: #61e6ca; /* 밑줄 색상 */
+    transition: width 0.3s ease; /* 변화 시 애니메이션 */
+  }
+
+  &:hover:before,
+  &:hover:after {
+    width: 100%; /* 호버 시 전체 너비로 확장 */
+    transition: width 0.3s ease; /* 변화 시 애니메이션 */
   }
 `;
 
@@ -176,14 +242,30 @@ const MusicCategory05 = styled.div`
   font-size: 1.8rem;
   align-items: center;
   justify-content: center;
+  overflow: hidden; /* 텍스트 밑으로 확장되지 않도록 오버플로우 제어 */
 
   /* 호버 효과 스타일 */
   &:hover {
     color: white; /* 호버 시 텍스트 색상 변경 */
-    transform: scale(1.15); /* 텍스트 확대 */
     cursor: pointer; /* 호버 시 마우스 커서 변경 */
-    font-size: 18px; /* 글자 크기 조절 */
-    text-decoration: underline;
+    text-decoration: none; /* 밑줄 제거 */
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0%; /* 초기에는 화면의 절반만큼의 너비를 가짐 */
+    height: 2px; /* 밑줄 높이 */
+    bottom: 0;
+    background-color: #61e6ca; /* 밑줄 색상 */
+    transition: width 0.3s ease; /* 변화 시 애니메이션 */
+  }
+
+  &:hover:before,
+  &:hover:after {
+    width: 100%; /* 호버 시 전체 너비로 확장 */
+    transition: width 0.3s ease; /* 변화 시 애니메이션 */
   }
 `;
 
@@ -198,7 +280,7 @@ const ListContainer = styled.div`
 `;
 
 const ListBox = styled.div`
-  width: 94vw
+  width: 100vw;
   height: 10rem;
   margin-bottom: 1rem;
   padding-left: 3rem;
@@ -258,6 +340,7 @@ const MusicPlaySet = styled.div`
   position: relative;
   border: 1px solid white;
   margin-left: 11rem;
+  color: white;
 `;
 
 const MusicTag = styled.div`
@@ -342,6 +425,22 @@ const MusicList = () => {
 
     // ... 추가 이미지
   ];
+  //홍보사진 배열.
+
+  //음악 파일 배열.
+  const musicFiles = [
+    require("../conponent/MusicList/testmusic01.mp3"),
+    require("../conponent/MusicList/testmusic02.mp3"),
+    require("../conponent/MusicList/testmusic03.mp3"),
+    require("../conponent/MusicList/testmusic04.mp3"),
+    require("../conponent/MusicList/testmusic05.mp3"),
+    require("../conponent/MusicList/testmusic06.mp3"),
+    require("../conponent/MusicList/testmusic07.mp3"),
+    require("../conponent/MusicList/testmusic08.mp3"),
+    require("../conponent/MusicList/testmusic09.mp3"),
+    require("../conponent/MusicList/testmusic10.mp3"),
+    require("../conponent/MusicList/testmusic.mp3"),
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -375,7 +474,9 @@ const MusicList = () => {
             <SongName>노래제목</SongName>
             <SingerName>by 가수이름</SingerName>
           </MusicDet>
-          <MusicPlaySet></MusicPlaySet>
+          <MusicPlaySet>
+            <Waveform music={musicFiles[i % musicFiles.length]} />
+          </MusicPlaySet>
           <MusicTag>#나른한 #뉴에이지 #피아노</MusicTag>
           <PublishDay>발매일: 23.11.13</PublishDay>
         </ListBox>

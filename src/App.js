@@ -9,6 +9,7 @@ function App() {
     <>
       <GlobalStyle />
       <Header />
+
       <MusicList />
       <Footer />
     </>

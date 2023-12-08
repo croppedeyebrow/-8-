@@ -20,7 +20,7 @@ const ContentGroup = styled.div`
   );
   height: 60rem;
   position: relative;
-  width: 100vw;
+  width: 91.2%;
   display: flex;
   flex-direction: row;
   align-items: center;
