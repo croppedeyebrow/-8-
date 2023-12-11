@@ -14,12 +14,11 @@ const NavContainer = styled.div`
 
 const Code8Head = styled.div`
   height: 8rem;
-  width: 100%;
+  width: 100vw;
   display: flex;
   position: relative;
   border: 1px solid white;
   padding-left: 8rem;
-
   align-items: center;
   flex-direction: row;
 `;
