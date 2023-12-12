@@ -5,18 +5,20 @@ import MusicList from "./pages/MusicPage/MusicListPage";
 import Footer from "./style/Footer";
 import MusicInfo from "./pages/MusicPage/MusicInfoPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import MusicRegistPage from "./pages/MusicPage/MusicRegistPage";
 
 function App() {
   return (
     <>
-      <Router>
-        <GlobalStyle />
-        <Routes>
+      {/* <Router> */}
+      <GlobalStyle />
+      {/* <Routes>
           <Route path="/" element={<MusicList />} />
-          <Route path="/music-info-page" element={<MusicInfo />} />
-        </Routes>
-      </Router>
-      {/* <GlobalStyle /> */}
+          <Route path="/music-info-page" element={<MusicInfo />} />  */}
+      <MusicRegistPage />
+      {/* </Routes>  */}
+      {/* </Router>  */}
+      <GlobalStyle />
       {/* <Header /> */}
       {/* <MusicList /> */}
       {/* <MusicInfo /> */}
