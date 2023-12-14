@@ -12,7 +12,8 @@ import Searchicon from "../../images/SearchIcon.png";
 const InputBox = styled.div`
   height: 8rem;
   border: none;
-  //   position: fixed;
+  position: relative;
+  display: flex;
   width: 81rem;
 `;
 
@@ -23,7 +24,8 @@ const SearchInput = styled.input`
   box-shadow: inset 0px 4px 4px #00000040;
   height: 5rem;
   left: 2rem;
-  position: absolute;
+  position: relative;
+  display:flex;
   top: 14px;
   width: 72rem;
   padding: 0 2rem;
@@ -46,9 +48,11 @@ const SearchButton = styled.button`
   border-radius: 2rem;
   color: white;
   height: 4rem;
-  left: 72rem;
+   display: flex;
   position: relative;
-  top: 2rem;
+  align-items: center;
+   top: 2rem;
+   right:4rem;
   width: 4rem;
   border: none;
   transition: transform 0.3s ease; /* 호버 시 변화를 부드럽게 만들기 위한 transition 속성 */
@@ -65,11 +69,11 @@ const SearchButton = styled.button`
 `;
 
 const SearchIcon = styled.img`
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   position: relative;
   display: flex;
-  left: 0.4rem;
+  // left: 0.4rem;
 `;
 
 const SearchBox = () => {

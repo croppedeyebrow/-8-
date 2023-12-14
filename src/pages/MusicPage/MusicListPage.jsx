@@ -12,8 +12,7 @@ import { Link } from "react-router-dom";
 
 const SingList = styled.div`
   width: 100vw;
-  height: 210rem;
-  border: 1px solid red;
+  height: 100rem;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -23,7 +22,7 @@ const SingList = styled.div`
 const SingerPost = styled.div`
   width: 100vw;
   height: 50rem;
-  border: 1px solid black;
+
   display: flex;
   position: relative;
   box-shadow: 5rem;
@@ -35,14 +34,15 @@ const SingerPostImg = styled.img`
   height: 100%;
   display: flex;
   position: relative;
-  object-fit: contain;
-  bottom: 20rem;
+  overflow: hidden;
+  // bottom: 20rem;
 `;
 
 const SearchBarBox = styled.div`
   display: flex;
   position: relative;
-  border: 1px solid black;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
   background-color: white;
   width: 100vw;
   height: 17rem;
@@ -55,7 +55,7 @@ const SearchBar = styled.div`
   height: 8rem;
   border-radius: 1.5rem;
   border: 1px solid #008bff;
-  margin-left: 15rem;
+  // margin-left: 15rem;
   position: relative;
   display: flex;
   background-color: #eeeeee;
@@ -64,8 +64,18 @@ const SearchBar = styled.div`
   box-shadow: 0px 4px 4px #00000040;
 `;
 
+const SingLIstBottom = styled.div`
+  height: 150rem;
+  width: 100vw;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
 const ListNavbar = styled.div`
-  width: 100%;
+  width: 80vw;
   height: 6rem;
   display: flex;
   position: relative;
@@ -74,9 +84,9 @@ const ListNavbar = styled.div`
   gap: 1.5rem;
   background-color: black;
   box-shadow: 5px;
-  border: 0.05px solid #00ffa8;
+  border: 0.5rem solid #00ffa8;
   // padding-left: 10rem;
-  border-radius: 10px; /* 요소에 볼록한 효과를 주는 border-radius 값 설정 */
+  border-radius: 1rem;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* 음영 효과를 주는 box-shadow 설정 */
 `;
 
@@ -271,38 +281,40 @@ const MusicCategory05 = styled.div`
 `;
 
 const ListContainer = styled.div`
-  width: 100%;
+  width: 80vw;
   height: 107rem;
   display: flex;
   position: relative;
   flex-direction: column;
-  border: 5px solid green;
+  // border: 1px solid green;
   background-color: #171717;
 `;
 
 const ListBox = styled.div`
-  width: 100vw;
+  width: 80vw;
   height: 10rem;
   margin-bottom: 1rem;
   // padding-left: 3rem;
   background-color: #171717;
-  border: 1px solid white;
+   border: 0.2px solid white;
   display: flex;
   position: relative:
    flex-direction: row;
    align-items: center;
+   justify-content: center;
+   border-radius: 1rem;
+   gap: 4rem;
 `;
 
 const MusicThumnail = styled.img`
   width: 4rem;
   height: 4rem;
-  border: 1px solid white;
+  // border: 1px solid white;
   border-radius: 8rem;
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
-  left: 1.5rem;
 
   /* 호버 효과 스타일 */
   &:hover {
@@ -315,17 +327,16 @@ const MusicThumnail = styled.img`
 const MusicDet = styled.div`
   width: 15rem;
   height: 8.4rem;
-  border: 1px solid white;
+  // border: 1px solid white;
   display: flex;
   position: relative;
   flex-direction: column;
-  margin-left: 3rem;
 `;
 
 const SongName = styled.div`
   width: 15rem;
   height: 4.2rem;
-  border: 1px solid white;
+  // border: 1px solid white;
   display: flex;
   position: relative;
   justify-content: center;
@@ -362,7 +373,7 @@ const SongName = styled.div`
 const SingerName = styled.div`
   width: 15rem;
   height: 4.2rem;
-  border: 1px solid white;
+  // border: 1px solid white;
   display: flex;
   position: relative;
   justify-content: center;
@@ -376,37 +387,34 @@ const MusicPlaySet = styled.div`
   height: 6rem;
   display: flex;
   position: relative;
-  border: 1px solid white;
-  margin-left: 11rem;
+  // border: 1px solid white;
   color: white;
 `;
 
 const MusicTag = styled.div`
-  margin-left: 21rem;
   width: 17rem;
   height: 4rem;
-  border: 1px solid white;
+  // border: 1px solid white;
   color: white;
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
-  font-weight: 400
+  font-weight: 400;
   font-size: 1.3rem;
 `;
 
 const PublishDay = styled.div`
-  width: 10rem;
+  width: 5rem;
   height: 4rem;
-  border: 1px solid white;
-  color: #00FFA8;
+  border: 1px solid black;
+  color: #00ffa8;
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
-  font-weight: 400
+  font-weight: 400;
   font-size: 1.3rem;
-  margin-left: 20rem;
 `;
 
 const PaginationContainer = styled.div`
@@ -581,17 +589,19 @@ const MusicList = () => {
         </SearchBar>
       </SearchBarBox>
 
-      <ListNavbar>
-        <MusicCategory01>음악종류</MusicCategory01>
-        <MusicCategory02>음악종류</MusicCategory02>
-        <MusicCategory03>음악종류</MusicCategory03>
-        <MusicCategory04>음악종류</MusicCategory04>
-        <MusicCategory05>음악종류</MusicCategory05>
-      </ListNavbar>
+      <SingLIstBottom>
+        <ListNavbar>
+          <MusicCategory01>음악종류</MusicCategory01>
+          <MusicCategory02>음악종류</MusicCategory02>
+          <MusicCategory03>음악종류</MusicCategory03>
+          <MusicCategory04>음악종류</MusicCategory04>
+          <MusicCategory05>음악종류</MusicCategory05>
+        </ListNavbar>
 
-      <ListContainer>{currentItems}</ListContainer>
+        <ListContainer>{currentItems}</ListContainer>
 
-      <PaginationContainer>{renderPagination()}</PaginationContainer>
+        <PaginationContainer>{renderPagination()}</PaginationContainer>
+      </SingLIstBottom>
     </SingList>
   );
 };

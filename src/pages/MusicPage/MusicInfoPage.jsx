@@ -13,11 +13,12 @@ import commentimg from "../../images/postimg05.jpg";
 import commentimg01 from "../../images/postimg03.jpg";
 
 const InfoContainer = styled.div`
-  width: 100vw;
-  height: 210rem;
+  width: 100%;
+  height: 250rem;
   display: flex;
   position: relative;
   flex-direction: column;
+  // border: 1px solid red;
 `;
 
 const TopInfoBox = styled.div`
@@ -26,8 +27,8 @@ const TopInfoBox = styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
-  border: 1px solid green;
-  algin-items: center;
+  // border: 2px solid black;
+  align-items: center;
 `;
 
 const rotateAnimation = keyframes`
@@ -43,7 +44,7 @@ const MusicImgBox = styled.div`
   width: 35rem;
   height: 35rem;
   position: relative;
-  left: 78.4rem;
+  // left: 78.4rem;
   top: 14rem;
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.3);
   border-radius: 50%;
@@ -70,7 +71,7 @@ const MusicImage = styled.img`
 `;
 
 const MusicInnerCircle = styled.div`
-  position: absolute;
+  position: relative;
   width: 100px;
   height: 100px;
   background: rgba(22, 19, 19, 0.1);
@@ -84,12 +85,12 @@ const MusicInnerCircle = styled.div`
 `;
 
 const MusicName = styled.div`
-  position: absolute;
+  position: relative;
   display: flex;
-  width: 110px;
-  height: 43px;
-  left: 904.9px;
-  top: 518px;
+  width: 32rem;
+  height: 4.3rem;
+  // left: 904.9px;
+  top: 15rem;
   align-items: center;
   justify-content: center;
   font-family: "Noto Sans KR";
@@ -98,21 +99,20 @@ const MusicName = styled.div`
   font-size: 2.5rem;
   line-height: 43px;
   text-align: center;
-
+  border: 1px solid red;
   color: #000000;
 `;
 
 const MusicDefInfo = styled.div`
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify content: center;
+  justify-content: center;
   align-items: center;
-  width: 314.95px;
-  height: 69.41px;
-  left: 803px;
-  top: 561px;
- 
+  width: 32rem;
+  height: 7rem;
+  // left: 803px;
+  top: 18rem;
 `;
 
 const SingerName = styled.div`
@@ -188,8 +188,8 @@ const BoxCon = styled.div`
   width: 44.6rem;
   height: 9.2rem;
 
-  left: 74rem;
-  top: 30rem;
+  // left: 74rem;
+  top: 18rem;
   display: flex;
   flex-direction: row;
   gap: 3.8rem;
@@ -257,7 +257,7 @@ const PlayBox = styled.button`
   position: relative;
   display: flex;
   justify-content: center;
-  align-item: center;
+  align-items: center;
   border-radius: 4rem;
   background: linear-gradient(180deg, #008bff, #61e6ca);
   box-shadow: 0px 5.1px 19.18px -3.2px rgba(0, 0, 0, 0.3);
@@ -286,16 +286,17 @@ const VolumeInput = styled.div`
   // bottom: 20px; /* 바닥과의 거리를 조정 */
 
   justify-content: center;
-  // left: 18rem;
-  top: 30rem;
+  left: 0rem;
+  top: 18rem;
 `;
 
 const BottomInfoBox = styled.div`
-  height: 132rem;
+  height: auto;
   width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
+  // border: 1px solid blue;
 `;
 
 const BottomTitle = styled.div`
@@ -310,17 +311,15 @@ const BottomTitle = styled.div`
 `;
 
 const DetailInfoBox = styled.div`
-  width: 100%;
+  width: 100%; /* 또는 %값으로 조정 */
   height: 128rem;
-  
   display: flex;
-  flex-direction: row:
+  flex-direction: row;
   position: relative;
 `;
 
 const CoperateInfo = styled.div`
-  width: 76rem;
-
+  width: 60rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -339,25 +338,24 @@ const CopoerateTitle = styled.div`
 
 const CopoeraterBox = styled.div`
   position: relative;
-  width: 58rem;
+  width: 38rem;
   height: 102.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 6rem;
-
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
-  line-height: 23px;
+  font-size: 1.6rem;
+  line-height: 2.3rem;
 
   color: #000000;
 `;
 
 const CopertatorInfo = styled.div`
   position: relative;
-  width: 56rem;
+  width: 40rem;
   height: 20rem;
 
   display: flex;
@@ -373,7 +371,7 @@ const ProfileImg = styled.img`
   height: 20rem;
 
   border-radius: 10rem;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0rem 0rem 0.4rem rgba(0, 0, 0, 0.25);
 `;
 
 const CoperDetail = styled.div`
@@ -388,38 +386,37 @@ const CoperDetail01 = styled.div`
   position: relative;
   display: flex;
   flex-direction: row;
-  width: 28.9rem;
+  width: 20rem;
   height: 5rem;
-
   align-items: center;
-  gap: 4rem;
+  justify-content: center;
+  gap: 2rem;
 `;
 
 const CoperName = styled.div`
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   display: flex;
   position: relative;
-  left: 3rem;
+  // left: 3rem;
 `;
 
 const MusicianTag = styled.img`
   display: flex;
   position: relative;
-
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
 `;
 
 const CoperDetail02 = styled.div`
   position: relative;
   display: flex;
   flex-direction: row;
-  width: 28.9rem;
+  width: 20rem;
   height: 5rem;
   top: 1rem;
   align-items: center;
-  gap: 4rem;
+  gap: 2rem;
 `;
 
 const CoLikeBox = styled.div`
@@ -431,8 +428,8 @@ const CoLikeBox = styled.div`
   font-weight: light;
   font-size: 1.8rem;
   gap: 1rem;
-  width: 135px;
-  height: 52px;
+  width: 13.5rem;
+  height: 5.2rem;
   background: #ffffff;
   box-shadow: 0px 5.114px 19.1775px -3.19625px rgba(0, 0, 0, 0.3);
   border-radius: 31.9625px;
@@ -445,17 +442,17 @@ const FollowerBox = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  width: 135px;
-  height: 52px;
+  width: 10rem;
+  height: 5rem;
 
   background: #ffffff;
-  box-shadow: 0px 5.114px 19.1775px -3.19625px rgba(0, 0, 0, 0.3);
-  border-radius: 31.9625px;
+  box-shadow: 0px 0.6rem 2rem -0.4rem rgba(0, 0, 0, 0.3);
+  border-radius: 3.2rem;
 
   /* 호버 효과 스타일 */
   &:hover {
     cursor: pointer; /* 호버 시 마우스 커서 변경 */
-    box-shadow: 0px 4px 8px white;
+    box-shadow: 0rem 0.4rem 0.8rem white;
     transform: scale(1.1);
   }
 `;
@@ -471,8 +468,7 @@ const FollowerCount = styled.div`
 `;
 
 const LyricsInfo = styled.div`
-  width: 39.5rem;
-
+  width: 35rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -490,21 +486,22 @@ const LyricsTitle = styled.div`
 
 const LyricsBox = styled.div`
   position: relative;
-  width: 360px;
-  height: 1025px;
+  width: 30rem;
+  height: 102.5rem;
 
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
-  line-height: 23px;
+  font-size: 1rem;
+  line-height: 2.3rem;
 
   color: #000000;
 `;
 
 const CommnetZone = styled.div`
-  width: 75.7rem;
-
+  left: 5rem;
+  width: 50rem;
+  border: 1px solid green;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -525,14 +522,14 @@ const CommentBOx = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 64rem;
+  width: 48rem;
   height: 110rem;
 
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
-  line-height: 23px;
+  font-size: 1.6rem;
+  line-height: 2.3rem;
 
   color: #000000;
 `;
@@ -542,11 +539,12 @@ const InputArea = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 60rem;
-  height: 10.2rem;
-  padding: 0 2.2rem;
+  justify-content: center;
+  width: 48rem;
+  height: 8rem;
+
   background: #eeeeee;
-  border-radius: 15px;
+  border-radius: 1.5rem;
   gap: 1.5rem;
 `;
 
@@ -557,7 +555,7 @@ const CommenterInfo = styled.div`
   gap: 0.3rem;
   width: 5.5rem;
   height: 9rem;
-
+  top: 0.5rem;
   align-items: center;
   justify-content: center;
 `;
@@ -572,8 +570,8 @@ const CommenterName = styled.div`
 
 const CommentImg = styled.img`
   position: relative;
-  width: 46px;
-  height: 46px;
+  width: 4.6rem;
+  height: 4.6rem;
   border-radius: 20rem;
   background: blue;
 `;
@@ -583,35 +581,35 @@ const TextInput = styled.input`
 
   position: relative;
   display: flex;
-  width: 469px;
-  height: 67px;
+  width: 30rem;
+  height: 7rem;
   background: #ffffff;
   border: 0.3px solid #000000;
   border-radius: 10px;
   box-shadow: inset 1px 1px rgba(0, 0, 0, 0.7);
-/* 호버 효과 스타일 */
+  /* 호버 효과 스타일 */
   &:hover {
-    transform: scale(1.005); 
+    transform: scale(1.005);
     cursor: pointer; /* 호버 시 마우스 커서 변경 */
 
     /* 클릭 시 테두리 없애기 */
     &:focus {
       outline: none;
     }
-
+  }
 `;
 const CommentButton = styled.div`
   position: relative;
   display: flex;
-  width: 73px;
-  height: 67px;
+  width: 8rem;
+  height: 6rem;
   align-items: center;
   justify-content: center;
   box-shadow: 2px 2px rgba(0, 0, 0, 0.4);
 
   background: #4296dc;
-  border-radius: 10px;
-  transition: transform 0.3s ease; 
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
 
   /* 호버 효과 스타일 */
   &:hover {
@@ -627,7 +625,7 @@ const CommentButton = styled.div`
 const Distinctline = styled.div`
   position: relative;
   display: flex;
-  width: 64rem;
+  width: 46rem;
   height: 0px;
   top: 3.2rem;
 
@@ -641,7 +639,7 @@ const Comments = styled.div`
   align-items: center;
   top: 3.2rem;
   gap: 5rem;
-  width: 64rem;
+  width: 46rem;
   height: 9rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 `;
@@ -656,13 +654,13 @@ const CommenterInfo01 = styled.div`
 
   align-items: center;
   justify-content: center;
-  left: 2rem;
+  // left: 2rem;
 `;
 
 const CommentImg01 = styled.img`
   position: relative;
-  width: 46px;
-  height: 46px;
+  width: 4.5rem;
+  height: 4.5rem;
   border-radius: 2.3rem;
   background: blue;
 `;
@@ -679,8 +677,8 @@ const CommentText = styled.div`
   box-sizing: border-box;
   position: relative;
   display: flex;
-  width: 469px;
-  height: 67px;
+  width: 46rem;
+  height: 6.7rem;
 
   align-items: center;
 `;
@@ -689,15 +687,15 @@ const UpdateDelete = styled.div`
   position: relative;
   display: flex;
   flex-direction: row;
-  width: 5rem;
-  height: 14px;
+  width: 10rem;
+  height: 1.4rem;
   right: 1rem;
   top: 2rem;
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 300;
-  font-size: 10px;
-  line-height: 14px;
+  font-size: 1rem;
+  line-height: 1.4rem;
 
   color: #000000;
 `;
@@ -708,8 +706,8 @@ const DeleteText = styled.div`
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 300;
-  font-size: 10px;
-  line-height: 14px;
+  font-size: 1rem;
+  line-height: 1.4rem;
 
   color: #000000;
 `;
@@ -719,8 +717,8 @@ position: relative
 font-family: 'Noto Sans KR';
 font-style: normal;
 font-weight: 300;
-font-size: 10px;
-line-height: 14px;
+font-size: 1rem;
+line-height: 1.4rem;
 
 color: #000000;`;
 
@@ -807,7 +805,6 @@ const MusicInfo = () => {
           />
           <MusicInnerCircle />
         </MusicImgBox>
-
         <MusicName>노래제목</MusicName>
         <MusicDefInfo>
           <SingerName>가수이름</SingerName>
@@ -819,7 +816,6 @@ const MusicInfo = () => {
 
           <Genre>장르</Genre>
         </MusicDefInfo>
-
         <BoxCon>
           <LikeBox>
             <LikeHeart alt="좋아요하트" src={likeheart} />
@@ -838,7 +834,6 @@ const MusicInfo = () => {
             onPlay={() => {}}
           />
         </BoxCon>
-
         <VolumeInput>
           <input
             type="range"
@@ -850,10 +845,8 @@ const MusicInfo = () => {
           />
         </VolumeInput>
       </TopInfoBox>
-
+      <BottomTitle>곡정보</BottomTitle>
       <BottomInfoBox>
-        <BottomTitle>곡정보</BottomTitle>
-
         <DetailInfoBox>
           <CoperateInfo>
             <CopoerateTitle>Producer</CopoerateTitle>

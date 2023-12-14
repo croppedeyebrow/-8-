@@ -13,8 +13,8 @@ const WaveformContainer = styled.div`
   height: 5.4rem;
   width: 100%;
   background: transparent;
-  gap: 2rem;
-  border: 1px solid red;
+  // gap: 2rem;
+  // border: 1px solid red;
 `;
 
 // Wave 스타일 컴포넌트를 정의합니다.
@@ -28,6 +28,7 @@ const Wave = styled.div`
 // PlayButton 스타일 컴포넌트를 정의합니다.
 const PlayButton = styled.button`
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   width: 4rem;
@@ -36,7 +37,7 @@ const PlayButton = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
-  padding-bottom: 3px;
+  // padding-bottom: 3px;
   background: none;
 
   img {

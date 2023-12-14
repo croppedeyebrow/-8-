@@ -10,14 +10,14 @@ import MusicRegistPage from "./pages/MusicPage/MusicRegistPage";
 function App() {
   return (
     <>
-      {/* <Router> */}
-      <GlobalStyle />
-      {/* <Routes>
+      <Router>
+        <GlobalStyle />
+        <Routes>
           <Route path="/" element={<MusicList />} />
-          <Route path="/music-info-page" element={<MusicInfo />} />  */}
-      <MusicRegistPage />
-      {/* </Routes>  */}
-      {/* </Router>  */}
+          <Route path="/music-info-page" element={<MusicInfo />} />
+          {/* <MusicRegistPage /> */}
+        </Routes>
+      </Router>
       <GlobalStyle />
       {/* <Header /> */}
       {/* <MusicList /> */}

@@ -4,25 +4,25 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 
 const searchBarStyle = {
   position: "relative",
-  marginTop: "20px",
+  display: "flex",
+  marginTop: "2rem;",
 };
 
 const inputStyle = {
-  paddingLeft: "10px",
-  marginBottom: "10px",
+  // paddingLeft: "10px",
+  marginBottom: "1rem",
   fontWeight: "bold",
-  width: "250px",
-  height: "40px",
-  border: "2px solid #ffcdd2",
-  borderRadius: "5px",
+  width: "25rem",
+  height: "4rem",
+  border: "0.2rem solid #ffcdd2",
+  borderRadius: "0.5rem",
   outline: "none",
 };
 
 const buttonStyle = {
   position: "absolute",
-  top: "10px",
-  right: "10px",
-  fontSize: "20px",
+
+  fontSize: "2rem",
 };
 
 interface SearchBarPropsType {
