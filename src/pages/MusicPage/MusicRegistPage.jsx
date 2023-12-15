@@ -1,247 +1,354 @@
-import React from "react";
-import styled from "styled-components";
-import registerimg from "../../images/musicplay.gif";
+// import AxiosApi from "../../axios/PerformanceAxios";
+// import React, { useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import {
+//   Container,
+//   UserInfo,
+//   UpdateZone,
+//   InputBox,
+//   Button,
+// } from "../../style/performance/PerformanceUpdateStyle";
+// import UpdateBox from "../../component/performance/UpdateBox";
+// import UpdateUserInfo from "../../component/performance/UpdateUserInfo";
 
-const RegistContainer = styled.div`
-  width: 100vw;
-  height: 210rem;
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: center;
+// import styled from "styled-components";
+// import heartImg from "../../images/Heart.png";
+// import Pointer from "../../images/Pointer.png";
 
-  border: 1px solid red;
-`;
+// export const Container = styled.div`
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   box-sizing: border-box;
+// `;
+// // UpdateUserInfo.jsx 스타일 부분
+// export const UserInfo = styled.div`
+//   width: 80%;
+//   height: 21.5rem;
+//   margin-top: 5rem;
+//   border-radius: 1rem;
+//   background: linear-gradient(to right, var(--maingreen), var(--mainblue));
+//   display: flex;
+//   align-items: center;
+//   overflow: hidden;
+//   .image {
+//     /* flex: 1; */
+//     width: 13.5rem;
+//     height: 13.5rem;
+//     border-radius: 50%;
+//     background-color: lightgray; // 사진이 들어갈 부분
+//     border: 0.8rem solid white;
+//     box-sizing: content-box;
+//     margin-left: 5rem;
+//   }
+//   .leftInfo {
+//     /* flex: 1; */
+//     width: 20%;
+//     height: 100%;
+//     margin-left: 4%;
+//     /* background-color: skyblue; */
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     color: white;
+//     .authtitle {
+//       font-size: 2rem;
+//       font-weight: 400;
+//     }
+//     .nick {
+//       font-size: 3rem;
+//       font-weight: 700;
+//     }
+//     .heart {
+//       margin-top: 0.5rem;
+//       width: 14rem;
+//       height: 5rem;
+//       background-color: white;
+//       border-radius: 10rem;
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       color: black;
+//       overflow: hidden;
+//       .heartimg {
+//         width: 25%;
+//         margin: 0rem 10%;
+//         height: 100%;
+//         background: url(${heartImg}) no-repeat center center;
+//         background-size: contain;
+//       }
+//       .count {
+//         width: 50%;
+//         flex: 1;
+//         font-size: 2rem;
+//         font-weight: 600;
+//         line-height: 1.5;
+//       }
+//     }
+//     .signdate {
+//       margin-top: 1rem;
+//       font-size: 2rem;
+//       font-weight: 400;
+//     }
+//   }
 
-const RegisterInfoBox = styled.div`
-  position: relative;
-  display: flex;
-  width: 158rem;
-  height: 21.5rem;
-  top: 14.7rem;
-  gap: 8rem;
-  background: linear-gradient(269.47deg, #008bff 4.68%, #61e6ca 93.53%);
-  border-radius: 1rem;
-  align-items: center;
-`;
+//   .rightInfo {
+//     /* flex: 1; */
+//     width: 40%;
+//     height: 100%;
+//     /* background-color: lightcoral; */
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     .top {
+//       width: 100%;
+//       height: 40%;
+//       /* background-color: orange; */
+//       display: flex;
+//       align-items: center;
+//       color: white;
+//       .Cnt {
+//         width: 50%;
+//         height: 100%;
+//         display: flex;
+//         justify-content: center;
+//         align-items: flex-end;
+//         font-size: 2rem;
+//         cnt {
+//           margin-left: 1rem;
+//           font-size: 2.5rem;
+//           font-weight: 700;
+//         }
+//       }
+//     }
+//     .pointerZone {
+//       width: 90%;
+//       height: 20%;
+//       /* background-color: white; */
+//       position: relative;
+//       .pointer {
+//         position: absolute;
+//         left: 20%;
+//         bottom: 0;
+//         width: 1.5rem;
+//         height: 3rem;
+//         transform: translate(-50%, 0%);
+//         background: url(${Pointer}) no-repeat center center;
+//         background-size: contain;
+//       }
+//     }
+//     .mid {
+//       width: 90%;
+//       height: 35%;
+//       display: flex;
+//       justify-content: center;
+//       align-items: flex-end;
+//       flex-wrap: wrap;
+//       padding-bottom: 1rem;
+//       /* background-color: yellow; */
+//       .authGage {
+//         width: 100%;
+//         height: 1rem;
+//         border-radius: 2rem;
+//         border: 0.05rem solid white;
 
-const RegistMusicInfoBox = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 158rem;
-  height: 55rem;
-  top: 22rem;
-  background: #ffffff;
-  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.12);
-  border-radius: 10px;
-`;
+//         .gageBar {
+//           width: ${20}%;
+//           height: 100%;
+//           background-color: white;
+//         }
+//       }
 
-const RegisterImg = styled.img`
-  position: relative;
-  display: flex;
-  width: 13.5rem;
-  height: 13.5rem;
-  left: 3rem;
-  border-radius: 10rem;
-  border: 8px solid #ffffff;
-`;
+//       .check {
+//         width: 100%;
+//         display: flex;
+//         justify-content: space-between;
+//         .checker {
+//           width: 0.3rem;
+//           height: 1rem;
+//           border-radius: 1rem;
+//           background-color: white;
+//         }
+//       }
+//       .auth {
+//         width: 100%;
+//         height: 30%;
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         color: white;
+//         /* background-color: pink; */
+//         font-size: 1.6rem;
+//         font-weight: 400;
 
-const InfoBox = styled.div`
-  display: flex;
-  position: relative;
-  width: 27rem;
-  height: 20rem;
+//         .aut {
+//         }
+//       }
+//     }
+//   }
+//   .pointZone {
+//     flex: 1;
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     align-items: flex-end;
+//     padding-right: 4%;
+//     height: 100%;
+//     /* background-color: lightgray; */
+//     color: white;
+//     .title {
+//       font-size: 2rem;
+//       font-weight: 400;
+//     }
+//     .point {
+//       font-size: 3rem;
+//       font-weight: 700;
+//     }
+//     .buttonZone {
+//       display: flex;
+//       justify-content: flex-end;
+//       gap: 2rem;
+//       margin-top: 2rem;
+//     }
+//     Button {
+//       color: white;
+//       background-color: rgba(0, 0, 0, 0);
+//       border: 0.2rem solid white;
+//       margin: 0;
+//       &:active {
+//         background-color: var(--mainsky);
+//       }
+//     }
+//   }
+// `;
 
-  border: 1px solid white;
-`;
+// // UpdateBox.jsx 스타일 부분
+// export const UpdateZone = styled.div`
+//   margin: 3rem 0rem;
+//   border-radius: 1rem;
+//   width: 80%;
+//   box-shadow: 0 1rem 3rem -0.5rem rgba(0, 0, 0, 0.25);
+//   height: 36rem;
+//   display: flex;
+//   flex-direction: column;
+//   flex-wrap: wrap;
+//   .inputContainer {
+//     width: 95%;
+//     height: 20rem;
+//     display: flex;
+//     flex-direction: column;
+//     /* background-color: skyblue; */
+//     flex-wrap: wrap;
+//     div {
+//       margin-left: 3%;
+//       width: 30%;
+//       /* background-color: pink; */
+//       font-weight: 200;
+//       font-size: 1.6rem;
+//       display: flex;
+//       justify-content: space-between;
+//     }
+//     div.discription {
+//       Input {
+//         height: 17rem;
+//       }
+//     }
+//   }
 
-const RegisterRankBox = styled.div`
-  display: flex;
-  position: relative;
-  width: 60rem;
-  height: 20rem;
+//   h1 {
+//     padding-left: 3%;
+//     font-size: 4rem;
+//     width: 100%;
+//     height: 5rem;
+//     /* background-color: blue; */
+//     color: var(--mainolive);
+//   }
 
-  border: 1px solid white;
-`;
+//   div.buttonContainer {
+//     width: 100%;
+//     height: 5rem;
+//     display: flex;
+//     justify-content: right;
+//     /* background-color: skyblue; */
+//   }
+// `;
 
-const PointZone = styled.div`
-  display: flex;
-  position: relative;
-  width: 28rem;
-  height: 20rem;
+// export const InputBox = styled.input`
+//   margin-bottom: 1rem;
+//   width: 75%;
+//   height: 3.5rem;
+//   border: 0.03rem solid var(--mainolive);
 
-  border: 1px solid white;
-`;
+//   &::placeholder {
+//     color: var(--mainolive);
+//     padding-left: 1rem;
+//   }
+// `;
 
-const RegistTitle = styled.div`
-  display: flex;
-  position: relative;
-  border-bottom: 1px solid black;
-  width: 148rem;
-  height: 10rem;
-  align-items: center;
-`;
+// export const Button = styled.button`
+//   width: 10rem;
+//   height: 4.5rem;
+//   border-radius: 4rem;
+//   font-size: 1.8rem;
+//   font-weight: 700;
+//   color: var(--maindarkgreen);
+//   border: 0.3rem solid var(--maindarkgreen);
+//   background-color: white;
+//   margin-right: 5rem;
+//   &:hover {
+//     cursor: pointer;
+//     transform: scale(1.1); // 크기를 10% 증가
+//     transition: transform 0.1s ease-in-out;
+//   }
+//   &:active {
+//     background-color: var(--maindarkgreen);
+//     color: white;
+//   }
+// `;
 
-const TitleWriete = styled.div`
-  display: flex;
-  position: relative;
-  color: #97b0aa;
-  font-size: 4rem;
-  font-weight: bold;
-`;
+// const PerformanceUpdate = () => {
+//   // 입력값 정보 저장
+//   const [performer, setPerformer] = useState([]); // 참여자
+//   const [venue, setVenue] = useState(""); // 공연장소
+//   const [detailVenue, setDetailVenue] = useState(""); // 상세공연장소
+//   const [date, setDate] = useState(""); // 공연일시
+//   const [title, setTitle] = useState(""); // 공연제목
+//   const [poster, setPoster] = useState(""); // 포스터
+//   const [seat, setSeat] = useState(""); // 좌석수
+//   const [description, setDescription] = useState(""); // 공연소개
 
-const RegistInfoBox = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  width: 148rem;
-  height: 42rem;
-  border: 1px solid black;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-`;
+//   // 유효성 검사, 포스터이미지, 설명은 없어도 되는 값이므로 제외
+//   const [isperformer, setIsPerformer] = useState(false); // 참여자 입력유무
+//   const [isvenue, setIsVenue] = useState(false); // 공연장소 입력유무
+//   const [isdetailVenue, setIsDetailVenue] = useState(false); // 상세공연장소 입력유무
+//   const [isdate, setIsDate] = useState(false); // 공연일시 입력유무
+//   const [istitle, setIsTitle] = useState(false); // 공연제목 입력유무
+//   const [isseat, setIsSeat] = useState(false); // 좌석수 입력유무
 
-const InfoBox01 = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 46rem;
-  height: 40rem;
-  border: 1px solid black;
-  align-items: center;
-  gap: 2.5rem;
-`;
+//   const navigate = useNavigate();
 
-const SongNameBox = styled.div`
-  width: 42rem;
-  height: 4rem;
-  display: flex;
-  position: relative;
-  border: 1px solid black;
-  top: 1.5rem;
-`;
+//   const email = window.localStorage.getItem("email");
+//   console.log(email);
 
-const SingerBox = styled.div`
-  width: 42rem;
-  height: 4rem;
-  display: flex;
-  position: relative;
-  border: 1px solid black;
-  top: 1.5rem;
-`;
+//   useEffect(() => {
+//     if (!email) {
+//       alert("로그인이 필요합니다.");
+//       navigate("/login");
+//     }
+//   }, []);
 
-const ComposerBox = styled.div`
-  width: 42rem;
-  height: 4rem;
-  display: flex;
-  position: relative;
-  border: 1px solid black;
-  top: 1.5rem;
-`;
+//   // 입력값을 서버로 전송할 부분
 
-const LyricsistBox = styled.div`
-  width: 42rem;
-  height: 4rem;
-  display: flex;
-  position: relative;
-  border: 1px solid black;
-  top: 1.5rem;
-`;
+//   return (
+//     <>
+//       <Container>
+//         <UpdateUserInfo />
+//         <UpdateBox />
+//       </Container>
+//     </>
+//   );
+// };
 
-const GenreBox = styled.div`
-  width: 42rem;
-  height: 10rem;
-  display: flex;
-  position: relative;
-  border: 1px solid black;
-  top: 1.5rem;
-`;
-
-const InfoBox2 = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 46rem;
-  height: 40rem;
-  border: 1px solid black;
-  align-items: center;
-  gap: 2.5rem;
-`;
-
-const TitleImgBox = styled.div`
-  width: 42rem;
-  height: 4rem;
-  display: flex;
-  position: relative;
-  border: 1px solid black;
-  top: 1.5rem;
-`;
-
-const MusicIntroBox = styled.div`
-  width: 42rem;
-  height: 4rem;
-  display: flex;
-  position: relative;
-  border: 1px solid black;
-  top: 1.5rem;
-`;
-
-const LyricsBox = styled.div`
-  width: 42rem;
-  height: 24rem;
-  display: flex;
-  position: relative;
-  border: 1px solid black;
-  top: 1.5rem;
-`;
-
-const InfoBox03 = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 46rem;
-  height: 40rem;
-  border: 1px solid black;
-  align-items: center;
-`;
-
-const MusicRegistPage = () => {
-  return (
-    <RegistContainer>
-      <RegisterInfoBox>
-        <RegisterImg alt="음원등록자이미지" src={registerimg} />
-        <InfoBox></InfoBox>
-        <RegisterRankBox></RegisterRankBox>
-        <PointZone></PointZone>
-      </RegisterInfoBox>
-
-      <RegistMusicInfoBox>
-        <RegistTitle>
-          <TitleWriete>음원 등록하기</TitleWriete>
-        </RegistTitle>
-        <RegistInfoBox>
-          <InfoBox01>
-            <SongNameBox></SongNameBox>
-            <SingerBox></SingerBox>
-            <ComposerBox></ComposerBox>
-            <LyricsistBox></LyricsistBox>
-            <GenreBox></GenreBox>
-          </InfoBox01>
-
-          <InfoBox2>
-            <TitleImgBox></TitleImgBox>
-            <MusicIntroBox></MusicIntroBox>
-            <LyricsBox></LyricsBox>
-          </InfoBox2>
-
-          <InfoBox03></InfoBox03>
-        </RegistInfoBox>
-      </RegistMusicInfoBox>
-    </RegistContainer>
-  );
-};
-
-export default MusicRegistPage;
+// export default PerformanceUpdate;

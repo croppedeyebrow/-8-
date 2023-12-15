@@ -14,14 +14,15 @@ function App() {
         <GlobalStyle />
         <Routes>
           <Route path="/" element={<MusicList />} />
-          <Route path="/music-info-page" element={<MusicInfo />} />
-          {/* <MusicRegistPage /> */}
+          <Route path="/music-info/:id" element={<MusicInfo />} />
         </Routes>
+        <GlobalStyle />
       </Router>
-      <GlobalStyle />
+
+      {/* <Route path="/" element={<MusicInfo />} /> */}
       {/* <Header /> */}
-      {/* <MusicList /> */}
-      {/* <MusicInfo /> */}
+      {/* <MusicList />
+      <MusicInfo /> */}
       {/* <Footer /> */}
     </>
   );
