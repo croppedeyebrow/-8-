@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
-import SearchBox from "../../conponent/MusicList/SearchBox";
+import SearchBox from "../../component/MusicList/SearchBox";
 import postimg01 from "../../images/postimg01.jpg";
 import postimg02 from "../../images/postimg02.jpg";
 import postimg03 from "../../images/postimg03.jpg";
 import postimg04 from "../../images/postimg04.jpg";
 import postimg05 from "../../images/postimg05.jpg";
 import albumthuming from "../../images/albumthumimg01.jpg";
-import Waveform from "../../conponent/MusicList/MusicPlayer";
+import Waveform from "../../component/MusicList/MusicPlayer";
 import { Link } from "react-router-dom";
 import MusicAxiosApi from "../../axios/MusicAxios";
 
@@ -451,17 +451,17 @@ const MusicList = () => {
 
   //음악 파일 배열.
   const musicFiles = [
-    require("../../conponent/MusicList/testmusic01.mp3"),
-    require("../../conponent/MusicList/testmusic02.mp3"),
-    require("../../conponent/MusicList/testmusic03.mp3"),
-    require("../../conponent/MusicList/testmusic04.mp3"),
-    require("../../conponent/MusicList/testmusic05.mp3"),
-    require("../../conponent/MusicList/testmusic06.mp3"),
-    require("../../conponent/MusicList/testmusic07.mp3"),
-    require("../../conponent/MusicList/testmusic08.mp3"),
-    require("../../conponent/MusicList/testmusic09.mp3"),
-    require("../../conponent/MusicList/testmusic10.mp3"),
-    require("../../conponent/MusicList/testmusic.mp3"),
+    require("../../component/MusicList/testmusic01.mp3"),
+    require("../../component/MusicList/testmusic02.mp3"),
+    require("../../component/MusicList/testmusic03.mp3"),
+    require("../../component/MusicList/testmusic04.mp3"),
+    require("../../component/MusicList/testmusic05.mp3"),
+    require("../../component/MusicList/testmusic06.mp3"),
+    require("../../component/MusicList/testmusic07.mp3"),
+    require("../../component/MusicList/testmusic08.mp3"),
+    require("../../component/MusicList/testmusic09.mp3"),
+    require("../../component/MusicList/testmusic10.mp3"),
+    require("../../component/MusicList/testmusic.mp3"),
   ];
 
   useEffect(() => {

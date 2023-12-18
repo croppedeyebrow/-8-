@@ -1,16 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styled, { css, keyframes } from "styled-components";
-import albumimg from "../../images/albumcoverimg.jpg";
 import likeheart from "../../images/Heart.png";
 import buyimg from "../../images/Basket.png";
-import postimg01 from "../../images/postimg01.jpg";
-import postimg02 from "../../images/postimg03.jpg";
 import artistImg from "../../images/Artist_2.png";
-import subscriberImg from "../../images/Subscriber.png";
+import FetchLyrics from "../../component/MusicList/FetchLyrics";
 import ReactAudioPlayer from "react-audio-player";
-import commentimg from "../../images/postimg05.jpg";
-import commentimg01 from "../../images/postimg03.jpg";
 import MusicAxiosApi from "../../axios/MusicAxios";
 import InfoPageComment from "../../style/music/InfoPageComment";
 
@@ -519,7 +514,7 @@ const MusicInfo = () => {
     const getMusicById = async () => {
       try {
         const response = await MusicAxiosApi.getMusicById(id);
-        console.log("음악 리스트 조회 : ", response.data);
+        console.log("음악 상세 리스트 조회 : ", response.data);
         setMusicInfo(response.data);
       } catch (error) {
         console.log(error);
@@ -596,21 +591,26 @@ const MusicInfo = () => {
             <MusicImgBox isPlaying={isPlaying}>
               <MusicImage
                 alt="앨범커버"
-                src={musicInfo.thumbnailImage}
+                src={musicInfo.musicDTO.thumbnailImage}
                 style={{ transform: `rotate(${rotationAngle}deg)` }}
               />
               <MusicInnerCircle />
             </MusicImgBox>
-            <MusicName>{musicInfo.musicTitle}</MusicName>
+            <MusicName>{musicInfo.musicDTO.musicTitle}</MusicName>
             <MusicDefInfo>
-              <SingerName>{musicInfo.userNickname}</SingerName>
+              <SingerName>{musicInfo.userResDto.userNickname}</SingerName>
 
               <WriteInfo>
-                <ComposerNamer>작곡 : {musicInfo.composer}</ComposerNamer>|
-                <LyricistName>작사 : {musicInfo.lyricist}</LyricistName>
+                <ComposerNamer>
+                  작곡 : {musicInfo.musicDTO.composer}
+                </ComposerNamer>
+                |
+                <LyricistName>
+                  작사 : {musicInfo.musicDTO.lyricist}
+                </LyricistName>
               </WriteInfo>
 
-              <Genre>{musicInfo.genre}</Genre>
+              <Genre>{musicInfo.musicDTO.genre}</Genre>
             </MusicDefInfo>
           </>
         )}
@@ -679,8 +679,19 @@ const MusicInfo = () => {
           </CoperateInfo>
 
           <LyricsInfo>
-            <LyricsTitle>가사</LyricsTitle>
-            <LyricsBox>{musicInfo.lyrics}</LyricsBox>
+            {musicInfo && ( // musicInfo가 null이 아닌 경우에만 해당 내용을 렌더링합니다.
+              <>
+                <LyricsTitle>가사</LyricsTitle>
+                <LyricsBox>
+                  {" "}
+                  {musicInfo.musicDTO.lyrics ? (
+                    <FetchLyrics url={musicInfo.musicDTO.lyrics} />
+                  ) : (
+                    <p>가사를 불러올 수 없습니다.</p>
+                  )}
+                </LyricsBox>
+              </>
+            )}
           </LyricsInfo>
 
           {/* 댓글 */}
